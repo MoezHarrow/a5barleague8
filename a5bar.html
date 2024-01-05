@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A5bar</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 40%; /* Adjusted width */
+            border-collapse: collapse;
+            margin: 20px 10px; /* Adjusted margin */
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            table-layout: fixed;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>A5bar</h1>
+
+    <table id="standingsTable"></table>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <table id="contributionsTable"></table>
+        
+        <table id="fixturesTable"></table>
+    </div>
+    
+    <script>
+        // Your JavaScript code goes here
+        document.getElementById('standingsTable').innerHTML = generateStandingsTable();
+        document.getElementById('contributionsTable').innerHTML = generateContributionsTable();
+        document.getElementById('fixturesTable').innerHTML = generateFixturesTable();
+
+        function generateStandingsTable() {
+            return `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Points</th>
+                            <th>Matches Played</th>
+                            <th>Goals Scored</th>
+                            <th>Goals Conceded</th>
+                            <th>Goal Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Black Dusters</td>
+                            <td>8</td>
+                            <td>5</td>
+                            <td>11</td>
+                            <td>7</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Bamburg</td>
+                            <td>7</td>
+                            <td>3</td>
+                            <td>7</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Shaun the Shaun</td>
+                            <td>7</td>
+                            <td>4</td>
+                            <td>11</td>
+                            <td>7</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Black Jack</td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>11</td>
+                            <td>-10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+        }
+
+        function generateContributionsTable() {
+            return `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Top Goal Scorers</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🥇Morgan</td>
+                            <td>6 goals (5 mp)</td>
+                        </tr>
+                        <tr>
+                            <td>🥈Mazen</td>
+                            <td>5 goals (2 mp)</td>
+                        </tr>
+                        <tr>
+                            <td>🥉ZZZZZ</td>
+                            <td>4 goals (2 mp)</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>Top Assisters</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🥇Pnoj</td>
+                            <td>7 assists (4 mp)</td>
+                        </tr>
+                        <tr>
+                            <td>🥈Mc</td>
+                            <td>6 assists (5 mp)</td>
+                        </tr>
+                        <tr>
+                            <td>🥉Andor</td>
+                            <td>5 assists (3 mp)</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>Top Contributors</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🥇Mc</td>
+                            <td>10 contributions (5 mp)</td>
+                        </tr>
+                        <tr>
+                            <td>🥈Morgan</td>
+                            <td>8 contributions (5 mp)</td>
+                        </tr>
+                        <tr>
+                            <td>🥉Pnoj</td>
+                            <td>7 contributions (4 mp)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+        }
+
+        function generateFixturesTable() {
+            return `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cup Fixtures</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Black Dusters (H) 2-1 Shaun the Shaun (A)</td>
+                        </tr>
+                        <tr>
+                            <td>Bamburg VS Black Dusters (11/1/2024)</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>League Fixtures</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bamburg VS Black Jack</td>
+                        </tr>
+                        <tr>
+                            <td>Bamburg Vs Shaun the Shaun</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+        }
+    </script>
+</body>
+</html>
